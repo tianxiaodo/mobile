@@ -1,0 +1,181 @@
+body,div,a,p,ul,ol,li,h1,h2,h3,h4,h5,h6,span,label,table,tr,td,dl,dt,dd,img,b,i,form,fieldset,legend,input,select{padding:0;margin:0;font-family: "微软雅黑", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;color:#fff;font-style: normal;}
+html,body{width:100%;height:100%;-webkit-tap-highlight-color:transparent;}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-size:100px;}
+a{text-decoration:none;}
+a,button{-webkit-tap-highlight-color: transparent;}
+a:active,a:hover{outline:0;}
+ol,ul,li{list-style:none;}
+img,input,.TicketSubmit input{border:none;}
+img{vertical-align:middle;}
+input[type="checkbox"],input[type="radio"]{padding:0;}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+input[type="button"], input[type="submit"], input[type="reset"] {-webkit-appearance: none;}
+textarea,select,input{-webkit-appearance: none; -moz-appearance: none; -o-appearance: none; appearance: none;}
+
+/* iphone 6 */
+@media (min-device-width : 375px) and (max-device-width : 667px) and (-webkit-min-device-pixel-ratio : 2){
+    html{font-size: 117.1875px;}
+}
+/* iphone6 plus */
+@media (min-device-width : 414px) and (max-device-width : 736px) and (-webkit-min-device-pixel-ratio : 3){
+    html{font-size: 129.375px;}
+}
+
+
+
+.text-part1{
+    position: absolute;
+    overflow: hidden;
+    bottom: 0.6rem;
+    left: 0.2rem;
+    right: 0.2rem;
+    background-color: rgba(16,16,16,.5);
+    padding:4%;
+}
+
+.item h2{color:#fff;font-size:0.26rem;line-height:0.35rem;}
+
+.item1,.item2,.item3,.item4,.item5,.item6{
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    font-size:0.1rem;
+    line-height:0.18rem;
+    text-align: justify;
+    letter-spacing: 0.01rem;
+}
+
+.item2 {
+    background-image: url("../img/02.jpg");
+}
+
+.item1 {
+    background-image: url("../img/01.jpg");
+}
+
+.item3 {
+    background-image: url("../img/03.jpg");
+}
+
+.item4 {
+    background-image: url("../img/04.jpg");
+}
+
+.item5 {
+    background-image: url("../img/05.jpg");
+}
+
+.item6 {
+    background-image: url("../img/06.jpg");
+}
+
+
+.item3 .part1 {
+    position: absolute;
+    top: 1rem;
+    left: 19%;
+    text-align: center;
+    width: 1rem;
+    height: 1rem;
+    background-color: rgb(116, 178, 9);
+}
+
+.item3 .part2 {
+    position: absolute;
+    bottom: 1rem;
+    right: 19%;
+    text-align: center;
+    width: 1rem;
+    height: 1rem;
+    background-color: rgb(116, 178, 9);
+}
+
+
+
+.item2 .part1 {
+    font-size:0.15rem;
+    line-height:0.24rem;
+    padding-top:0.06rem;
+}
+
+.item2 .part2 {
+    width:100%;
+    height:0;
+    border:1px solid #FFF;
+    overflow: visible;
+    margin:20px 0;
+}
+
+.item2 .part3 span {
+    display: inline-block;
+    margin-top:0.2rem;
+}
+
+.item2 .part4 {
+    text-align:right;
+    line-height:0.14rem;
+    margin-top:0.06rem;
+}
+
+.item4 .part1 {
+    position: absolute;
+    top: 1rem;
+    left: 19%;
+    text-align: center;
+    width: 1rem;
+    height: 1rem;
+    background-color: rgb(116, 178, 9);
+}
+
+.item4 .part2 {
+    position: absolute;
+    bottom: 1rem;
+    right: 19%;
+    text-align: center;
+    width: 1rem;
+    height: 1rem;
+    background-color: rgb(116, 178, 9);
+}
+
+.item5 .part1 {
+    position: absolute;
+    bottom: 1rem;
+    right: 19%;
+    text-align: center;
+    width: 1.5rem;
+    height: 1rem;
+    background-color: rgb(116, 178, 9);
+}
+
+.item5 .part2 {
+    position: absolute;
+    top: 1rem;
+    left: 19%;
+    text-align: center;
+    width: 1.5rem;
+    height: 1rem;
+    background-color: rgb(116, 178, 9);
+}
+
+.item6 .part2 {
+    position: absolute;
+    top: 1rem;
+    left: 19%;
+    text-align: center;
+    width: 1.5rem;
+    height: 1rem;
+    background-color: rgb(116, 178, 9);
+}
+
+.item6 .part1 {
+    position: absolute;
+    bottom: 1rem;
+    left: 19%;
+    text-align: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgb(116, 178, 9);
+}
+

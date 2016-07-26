@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>1</title>
+	<meta name="format-detection" content="telephone=no"/>
+	<style>
+		*{margin: 0;padding: 0;}
+		html{width:100%;height:100%;background: gray}
+		body{width:100%;height:100%;overflow: hidden;position: relative;margin:0px }
+		@-webkit-keyframes body1-animation
+		{
+			0%   {-webkit-transform: rotateZ(0deg);}
+			12%   {-webkit-transform: rotateZ(1deg);}
+			24%   {-webkit-transform: rotateZ(0deg);}
+			36%   {-webkit-transform: rotateZ(-1deg);}
+			48%   {-webkit-transform: rotateZ(0deg);}
+			60%   {-webkit-transform: rotateZ(1deg);}
+			72%   {-webkit-transform: rotateZ(0deg);}
+			88%   {-webkit-transform: rotateZ(-1deg);}
+			100%   {-webkit-transform: rotateZ(0deg);}
+		}
+		#div_bg{position:absolute;z-index:0;left:0;top:0;width:110%;height:110%;background-image: url("images/bg.jpg");background-repeat:no-repeat;background-size: 100% 100%;
+			
+			/*
+			-webkit-transform-origin: center;
+	    	-webkit-transform: translateZ(100px);
+			-webkit-animation-name:bg-animation ;
+			-webkit-animation-duration:15s;
+			-webkit-animation-timing-function:linear;
+			-webkit-animation-delay:0s;
+			-webkit-animation-iteration-count:infinite;
+			-webkit-animation-direction:normal;
+			-webkit-animation-play-state:running;
+			 */
+			animation: bg-animation 5s linear 0s infinite alternate;
+		}
+		@-webkit-keyframes bg-animation 
+		{
+			0%   {left:0%;top:0%;width:110%;height:110%}
+			25%  {left:-4%;top:-4%;width:105%;height:105%}
+			50%  {left:0%;top:0%;width:101%;height:101%}
+			75%  {left:-4%;top:-4%;width:105%;height:105%}
+			100% {left:0%;top:0%;width:110%;height:110%}
+		}
+		@-webkit-keyframes bg-animation2
+		{
+			0%   {left:0%;top:0%;}
+			25%  {left:-5%;top:-5%;}
+			50%  {left:-9%;top:-9%;}
+			75%  {left:-5%;top:-5%;}
+			100% {left:0%;top:0%;}
+		}
+		.rain{
+			 background-image: url("images/rain.png");
+			 position: absolute;
+			 width: 100%;
+		    height: 100%;
+			 z-index: 100;
+			 background-size:100% 100%;
+		}
+		.rain1{    
+		    left: 100%;
+		    top: -100%;
+		    /*-webkit-animation: rain-animation 2s linear 0s  alternate;*/
+		}
+		.rain2{
+			width: 50%;
+		    height: 50%;
+		    left: 50%;
+		    top: -50%;
+		}
+		.rain3{
+		    left: 100%;
+		    top: -50%;
+		}
+		.rain4{
+		    left: 25%;
+		    top: -100%;
+		}
+		.rain5{
+		    left: 100%;
+		    top: -50%;
+		}
+		@-webkit-keyframes rain-animation1
+		{
+			0%   {left:100%;top:-100%}
+			50%  {left:0%;top:0%}
+			100% {left:-100%;top:100%}
+		}
+		@-webkit-keyframes rain-animation2
+		{
+			0%   {left:50%;top:-50%}
+			50%  {left:0%;top:0%}
+			100% {left:-50%;top:50%}
+		}
+		@-webkit-keyframes rain-animation3
+		{
+			0%   {left:100%;top:-50%}
+			50%  {left:75%;top:0%}
+			100% {left:50%;top:50%}
+		}
+		@-webkit-keyframes rain-animation4
+		{
+			0%   {left: 25%;top: -100%;}
+			50%  {left:-25%;top:50%}
+			100% {left:-75%;top:0%}
+		}
+		@-webkit-keyframes rain-animation5
+		{
+			0%   { left: 100%;top: -50%;}
+			50%  {left:50%;top:0%}
+			100% {left:0%;top:50%}
+		}
+
+		.person{
+			position:absolute;
+			display:none;
+			width:80%;
+			top:20%;
+			left:10%;
+			z-index: 50;
+
+		}
+		.wg{
+			position:absolute;
+			display:none;
+			width:80%;
+			top:20%;
+			left:10%;
+			z-index: 51;
+		}
+		@-webkit-keyframes rain-animation5
+		{
+			0%   { left: 100%;top: -50%;}
+			50%  {left:50%;top:0%}
+			100% {left:0%;top:50%}
+		}
+		@-webkit-keyframes person-animation
+		{
+			0%   { transform:scale(0,0);}
+			100% { transform:scale(1,1);}
+		}
+		
+		.stone{position:absolute; left:-100px;z-index: 20;}
+
+		.word{
+			position:absolute;
+			display: none;
+			z-index: 101;
+			top:70%;
+			left:20px;
+			width:40%;
+		}
+		@-webkit-keyframes word-animation
+		{
+			0%   { transform:scale(3,3);}
+			100% { transform:scale(1,1);}
+		}
+	</style>
+</head>
+<body>
+	<div id="div_bg"></div>
+	<!--rain-->
+	<div  class="rain1 rain"></div>
+	<div  class="rain2 rain"></div>
+	<div  class="rain3 rain"></div>
+	<div  class="rain4 rain"></div>
+	<div  class="rain5 rain"></div>
+	<!-- person -->
+	<img src="images/person.png" class="person"/>
+	<img src="images/wg.png" class="wg" />
+	<!-- stone -->
+	<img src="images/stone/1.png" width="20"  class="stone">
+	<img src="images/stone/2.png" width="30" class="stone">
+	<img src="images/stone/3.png" width="25" class="stone">
+	<img src="images/stone/4.png" width="15" class="stone">
+	<img src="images/stone/5.png" width="40" class="stone">
+	<img src="images/stone/6.png" width="38" class="stone">
+	<img src="images/stone/7.png" width="40" class="stone">
+	<img src="images/stone/8.png" width="44" class="stone">
+	<img src="images/stone/9.png" width="45" class="stone">
+	<img src="images/stone/10.png" width="46" class="stone">
+	<img src="images/stone/11.png" width="48" class="stone">
+	<img src="images/stone/12.png" width="49" class="stone">
+	<img src="images/stone/13.png" width="49" class="stone">
+	<img src="images/stone/14.png" width="49" class="stone">
+	<img src="images/stone/15.png" width="50" class="stone">
+	<img src="images/stone/16.png" width="60" class="stone">
+	<!-- word -->
+	<img src="images/word.png" class="word" />
+</body>
+
+	<script>
+	(function(){
+		var rainList=document.getElementsByClassName("rain");
+		for(var i=0;i<rainList.length;i++){
+			addAnimation(rainList[i]);
+		}
+		// 两秒后开始显示人物
+		setTimeout(function(){
+			var ele=document.getElementsByClassName("person")[0];
+			ele.style["display"]="block";
+			ele.style["animation"]="person-animation 0.5s linear 0s  alternate";
+			setTimeout(function(){
+				document.getElementsByClassName("wg")[0].style["display"]="block";
+			},500);
+			
+
+		},1000);
+		// 3秒后开始显示字体
+		setTimeout(function(){
+			var ele=document.getElementsByClassName("word")[0];
+			ele.style["display"]="block";
+			ele.style["animation"]="word-animation 0.3s linear 0s  alternate";
+			//document.body.style["animation"]="body1-animation 0.1s linear 0.3s  alternate";
+		},4000);
+		
+		// 雨滴动画
+		function addAnimation(ele){
+				var time=Math.random().toFixed(1)+0.5;
+				var idNum=ele.className.split(" ")[0].substr(4,1);
+				var animation="rain-animation"+idNum+" "+time+"s linear 0s  alternate";
+				ele.style["-webkit-animation"]=animation;
+				ele.style["animation"]=animation;
+				//rainList[1].style["animation"]="rain-animation 0.5s linear 0s  alternate";
+				(function(ele){
+					setTimeout(function(){
+						clearAnimation(ele);
+					},parseFloat(time)*1000+300);	
+				})(ele)
+				
+		}
+		function clearAnimation(ele){
+			ele.style["-webkit-animation"]="";
+			ele.style["animation"]="";
+			(function(ele){
+				setTimeout(function(){
+					addAnimation(ele);
+				},50);	
+			})(ele)
+		}
+		window.onload=stoneInit;
+		// 杂物动画
+		var stones=document.getElementsByClassName("stone");
+		function stoneInit(){
+				for(var i=0;i<stones.length;i++){
+					var stone={
+						body:stones[i],
+						w:parseInt(window.getComputedStyle(stones[i])["width"]),
+						h:parseInt(window.getComputedStyle(stones[i])["height"])
+					};
+					var isTop=parseInt(Math.random()*10)%2;
+					if(isTop){
+						var left =Math.floor(30+Math.random()*(innerWidth-20));
+						var top=stone.h*-1;	
+						if(left%4==1)
+							stones[i].style["z-index"]=51;
+					}
+					else{
+						var top =Math.floor(0+Math.random()*(innerHeight-50));
+						var left=innerWidth;
+						if(top%4==1)
+							stones[i].style["z-index"]=51;
+					}
+
+					stones[i].style["left"]=left+"px";
+					stones[i].style["top"]=top+"px";
+					stones[i].pos={w:stone.w,h:stone.h,t:top,l:left,isTop:isTop};
+				}
+				setTimeout(stoneAnimation,2000);
+		}
+		
+	})()
+</script>
+</html>

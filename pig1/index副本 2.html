@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>getOffsetTop</title>
+	<style type="text/css">
+	*{padding: 0;margin: 0;}
+	div{
+		width: 200px;
+		height: 200px;
+		padding: 50px;	
+		margin: 50px;
+		border: 1px solid #666;
+	}
+	
+	body{position:absolute;height: 100%;left:0;top:0;}
+	#div1{position:absolute;}
+	#div2{background:red;}
+	#div3{margin:33px;}
+	.h{height:300px;position: absolute;top:300px;border: 0}
+	</style>
+</head>
+<body>
+	<div id="div1">
+		<div id="div3">
+			<div id="div2"></div>
+		</div>
+	</div>
+	<div class="h"></div>
+</body>
+<script>
+	function getOffsetBodyTop(ele) {
+		if(ele==document.documentElement){
+			return 0;
+		}
+		else{
+			return arguments.callee(ele.parentElement,9)+((getComputedStyle(ele)["position"]=="absolute"||arguments.length==1)?ele.offsetTop:0);
+		}
+	};
+	var d1=document.getElementById("div1");
+	var d2=document.getElementById("div2");
+	var d3=document.getElementById("div3")
+
+</script>
+</html>

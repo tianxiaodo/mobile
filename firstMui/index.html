@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    	<style type="text/css">
+    		html,body{height:100%}
+		.nav_content{
+	     	transition: left 0.5s; 
+    		 	-webkit-transition: left 0.5s; 
+			height:100% ;
+		  	background-color: #333;
+		  	color:#fff;
+	  	    width: 60%;
+		    position: absolute;
+		    z-index: 14;
+		    left:-60%;
+		  }
+		  .left_nav_pop{
+		  	position: absolute;
+		  	width: 100%;
+		  	height: 100%;
+		  	z-index: 13;
+		  	left: 0;
+		  	top: 0;
+		  	background-color: rgba(000,000,000,0.2);
+		  	display: none;
+		  }
+		  
+		  .title{
+		  	margin: 35px 15px 10px;
+		  }
+		  .title+.content{
+		  	margin: 10px 15px 35px;
+		  	color: #bbb;
+		  	text-indent: 1em;
+		  	font-size: 14px;
+		  	line-height: 24px;
+		  }
+		  .mui-table-view{
+		  	margin-bottom: 35px;
+		  }
+		  .mui-switch{
+		  	margin:0 15px;
+		  }
+		  
+		  
+		  .tap_div{
+		  	display: none;
+		  	position: absolute;
+		  	z-index: 2;
+		  	background:white;
+		  	width: 100%;
+		    top: 45px;
+		    left: 0px;
+		    padding-bottom:50px;
+		    -webkit-transition: 0.5s;
+		    -webkit-Transform:translate3d(0px,0px,0px);
+		  }
+
+		  .div_mui{display:block;}
+		  .div_html5{height: calc(100% - 44px);}
+		  .div_html5 #container{margin:0 auto;width:100%;height:100%; border:1px #000 solid; background:#99F;position:relative;}
+		  .div_html5 #main{-webkit-transform-style:preserve-3d;-webkit-transform-origin:center center;-webkit-transform:rotateX(00deg) rotateY(-30deg) rotateZ(00deg);width:100px;height:100px;margin:60px auto;}
+			
+		  .div_html5 #main div:nth-child(1){position:absolute;-webkit-transform-origin:bottom;-webkit-transform:rotateX(90deg);width:100px;height:86.6px;background:url("images/1.png");background-repeat: round;}
+		  .div_html5 #main div:nth-child(2){position:absolute;-webkit-transform-origin:bottom;-webkit-transform:rotateX(30deg);width:100px;height:86.6px;background:url("images/2.png");background-repeat: round;}
+		  .div_html5 #main div:nth-child(3){position:absolute;-webkit-transform-origin:right bottom;-webkit-transform: rotateX(-30deg) rotateY(-90deg);width:100px;height:86.6px;background:url("images/3.png");background-repeat: round;}
+		  .div_html5 #main div:nth-child(4){position:absolute;-webkit-transform-origin:bottom;-webkit-transform:rotateX(30deg);width:100px;height:86.6px;background:url("images/4.png");background-repeat: round;}
+			
+		  .div_html5 input[type=number]{
+				width:60px;height:30px;line-height:30px;margin:5px;padding:0px;
+			}
+		  .div_html5 a{display:inline-block;width:60px;height:40px;line-height:40px;margin:5px 0;text-align:center;color:;background:#EDE0E0;border:1px solid gray;border-radius: 10px;font-size:0.8em;}
+			
+		  .div_html5 .diva{	
+				  display:block;
+				  width: 100%;
+				  text-align: right;
+				  text-decoration: none;
+				  font-size: 11px;
+				  color: #5FC3D5;
+				  font-weight: bold;
+				  text-align:right;
+			}
+		  .div_html5 i{
+				  display:block;
+				  width: 100%;
+				  text-align: right;
+				  text-decoration: none;
+				  font-size: 11px;
+				  color: #666;
+				  font-weight: bold;
+				  text-align:right;
+			}
+			
+		#svg_1 {
+			  stroke-dasharray:1500;
+			  stroke-dashoffset: 1500;
+			  -webkit-animation: dash 5s linear infinite;
+			  animation: dash 5s linear infinite;
+			}
+		ellipse{
+			 stroke-dasharray: 800;
+			  stroke-dashoffset: 800;
+			  -webkit-animation: dash 6s linear infinite;
+			  animation: dash 6s linear infinite;
+		}
+		#svg_3{
+			 stroke-dasharray:0;
+		     stroke-dashoffset:0;
+		}
+	    @-webkit-keyframes dash {
+	      to {
+	        stroke-dashoffset: 0;
+	      }
+	    }
+	    @keyframes dash {
+	      to {
+	        stroke-dashoffset: 0;
+	      }
+	    }
+	</style>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<body>
+	<!--
+    	作者：312982806@qq.com
+    	时间：2015-08-18
+    	描述：标题
+    -->
+	<header class="mui-bar mui-bar-nav" style="z-index: 15;">
+		<a id="" class="mui-icon mui-icon-bars mui-pull-left"></a>
+		<a id="info" class="mui-icon mui-icon-info-filled mui-pull-right" style="color: #999;"></a>
+		<h1 class="mui-title">Hello World</h1>
+	</header>
+
+	<!--
+    	作者：312982806@qq.com
+    	时间：2015-08-18
+    	描述：左边导航＋遮罩
+    -->
+	<div class="mui-content nav_content">
+		<div class="title">Web</div>
+		<div class="content">
+			生命不是在coding<br>&nbsp;&nbsp;&nbsp;&nbsp;就是在coding的路上
+		</div>
+		<div class="title" style="margin-bottom: 25px;">原生js＋css3动画实现</div>
+		<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted" style="color: #ddd;">
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" open-type="common" href="examples/pullrefresh_main.html">
+					MUI
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" open-type="common" href="examples/offcanvas-drag-left.html">
+					HTML5
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" href="examples/switches.html">
+					SVG
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" href="examples/tableviews-with-swipe.html">
+					HTML5+
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" href="examples/tab-with-viewpagerindicator.html">
+					Native
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="left_nav_pop"></div>
+	<!--
+    	作者：312982806@qq.com
+    	时间：2015-08-18
+    	描述：底部导航
+    -->
+	<nav class="mui-bar mui-bar-tab nav_bottom">
+		<a class="mui-tab-item mui-active" href="javascript:;" index=0>
+			<span class="mui-icon mui-icon-flag"></span>
+			<span class="mui-tab-label">MUI</span>
+		</a>
+		<a class="mui-tab-item" href="javascript:;"  index=1>
+			<span class="mui-icon mui-icon-star"></span>
+			<span class="mui-tab-label">HTML5</span>
+		</a>
+		<a class="mui-tab-item" href="#tabbar-with-map">
+			<span class="mui-icon mui-icon-spinner"></span>
+			<span class="mui-tab-label">SVG</span>
+		</a>
+		<a class="mui-tab-item" href="#tabbar-with-chat">
+			<span class="mui-icon mui-icon-starhalf"></span>
+			<span class="mui-tab-label">HTML5+</span>
+		</a>
+		<a class="mui-tab-item" href="#tabbar-with-sms">
+			<span class="mui-icon mui-icon-gear"></span>
+			<span class="mui-tab-label">Native</span>
+		</a>
+		
+	</nav>
+	
+	<!--
+    	作者：312982806@qq.com
+    	时间：2015-08-18
+    	描述：MUI页面
+    -->
+	<div class="div_mui tap_div div_active">
+		<div id="segmentedControl" class="mui-segmented-control">
+			<a class="mui-control-item mui-active" href="#item1mobile">
+					待办公文（8）
+				</a>
+			<a class="mui-control-item" href="#item2mobile">
+					已办公文
+				</a>
+			<a class="mui-control-item" href="#item3mobile">
+					全部公文
+				</a>
+		</div>
+		<div class="mui-content-padded">
+			<div id="item1mobile" class="mui-control-content mui-active">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						第一个选项卡子项-1
+					</li>
+					<li class="mui-table-view-cell">
+						第一个选项卡子项-2
+					</li>
+					<li class="mui-table-view-cell">
+						第一个选项卡子项-3
+					</li>
+					<li class="mui-table-view-cell">
+						第一个选项卡子项-4
+					</li>
+					<li class="mui-table-view-cell">
+						第一个选项卡子项-5
+					</li>
+				</ul>
+			</div>
+			<div id="item2mobile" class="mui-control-content">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						第二个选项卡子项-1
+					</li>
+					<li class="mui-table-view-cell">
+						第二个选项卡子项-2
+					</li>
+					<li class="mui-table-view-cell">
+						第二个选项卡子项-3
+					</li>
+					<li class="mui-table-view-cell">
+						第二个选项卡子项-4
+					</li>
+					<li class="mui-table-view-cell">
+						第二个选项卡子项-5
+					</li>
+				</ul>
+			</div>
+			<div id="item3mobile" class="mui-control-content">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						第三个选项卡子项-1
+					</li>
+					<li class="mui-table-view-cell">
+						第三个选项卡子项-2
+					</li>
+					<li class="mui-table-view-cell">
+						第三个选项卡子项-3
+					</li>
+					<li class="mui-table-view-cell">
+						第三个选项卡子项-4
+					</li>
+					<li class="mui-table-view-cell">
+						第三个选项卡子项-5
+					</li>
+				</ul>
+			</div>
+		</div>
+		<h5 class="mui-content-padded">Style</h5>
+		<div class="mui-card">
+			<form class="mui-input-group">
+				<div class="mui-input-row mui-radio">
+					<label>按钮</label>
+					<input name="style" type="radio" checked value="">
+				</div>
+				<div class="mui-input-row mui-radio">
+					<label>文字</label>
+					<input name="style" type="radio" value="inverted">
+				</div>
+			</form>
+		</div>
+		<h5 class="mui-content-padded">Lock</h5>
+		<div class="mui-switch" id="lock_ele">
+		  <div class="mui-switch-handle"></div>
+		</div>
+		<div class="mui-content-padded">
+			<h5>有底色</h5>
+			<span class="mui-badge">1</span>
+			<span class="mui-badge mui-badge-primary">12</span>
+			<span class="mui-badge mui-badge-success">123</span>
+			<span class="mui-badge mui-badge-warning">3</span>
+			<span class="mui-badge mui-badge-danger">45</span>
+			<span class="mui-badge mui-badge-purple">456</span>
+			<h5>无底色（使用父元素背景色）</h5>
+			<span class="mui-badge mui-badge-inverted">1</span>
+			<span class="mui-badge mui-badge-primary mui-badge-inverted">2</span>
+			<span class="mui-badge mui-badge-success mui-badge-inverted">3</span>
+			<span class="mui-badge mui-badge-warning mui-badge-inverted">4</span>
+			<span class="mui-badge mui-badge-danger mui-badge-inverted">5</span>
+			<span class="mui-badge mui-badge-royal mui-badge-inverted">6</span>
+		</div>
+	</div>
+	
+	<!--
+    	作者：312982806@qq.com
+    	时间：2015-08-18
+    	描述：HTML5页面
+    -->
+	<div class="div_html5 tap_div">
+		<div id="container">
+			<div id="main">
+				<div id="black"></div>
+				<div id="red"></div>
+				<div id="yellow"></div>
+				<div id="div4"></div>
+			</div>
+			
+			<a >rotateX</a>
+			<a  >rotateY</a>
+			<a >rotateZ</a>
+			<a style="" >reload</a>
+			
+			<span id="sec_black">
+				<input type="number"  value="90"/><input type="number"   value="0"/><input type="number"  value="0"/>
+				<a >btnblack</a>
+			</span>
+			
+			<section id="sec_red">
+				<input type="number"  value="30"/><input type="number"  value="0"/><input type="number"  value="0"/>
+				<a  >btnred</a>
+			</section>
+			
+			<section id="sec_yellow">
+				<input type="number"  value="-30"/><input type="number"  value="-90"/><input type="number"  value="0"/>
+				<a  >btnyellow</a>
+			</section>
+			<div id="demo" class="diva"  >DEMO&nbsp;&nbsp;&nbsp;&nbsp;</div>
+			<i>拼好三面再索要第四面。</i>
+			
+			
+		</div>
+	</div>
+
+	<!--
+    	作者：312982806@qq.com
+    	时间：2015-08-20
+    	描述：svg页面
+    -->
+	<div class="tap_div" style="width:100%;height:600px;overflow:hidden" id="wrapper">
+		<svg id="svg" xmlns="http://www.w3.org/2000/svg" version="1.1" height=1900  style="display:block;margin:0 auto;">
+			<path id="svg_1" d="m10,10 l0,100 l0,-110 l110,0 l0,110 l0,-110 l-110,0 l0,55 l110,0 l0,-55 l-55,0 l0,110 l0,-55 l-55,0 l0,55 l110,0" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+			<ellipse ry="62" rx="82.5" id="svg_2" cy="117" cx="212.5" opacity="0.5" stroke-width="1.5" stroke="#000" fill="#fff"/>
+			<path id="svg_3"   fill-opacity="null"  stroke-opacity="null" stroke-width="1" stroke="#000" fill="none" ></path>
+		</svg>
+	</div>
+</body>
+<script type="text/javascript" src="js/iscroll-probe.js"></script>
+<script type="text/javascript">
+	(function(){
+		
+		/*
+		 * 左滑导航按钮
+		 */
+		var leftBar=function(){
+			 this.ele=document.querySelector(".nav_content");
+			 this.pop=document.querySelector(".left_nav_pop");
+			 this.isShow=0;
+		}
+		leftBar.prototype.show=function(){
+			this.ele.style["left"]="0%";
+			this.pop.style["display"]="block";
+			this.isShow=1;
+		}
+		leftBar.prototype.hide=function(){
+			this.ele.style["left"]="-60%";
+			this.pop.style["display"]="none";
+			this.isShow=0;
+		}
+		leftBar.prototype.bindEvent=function(){
+			var _this=this;
+			document.querySelector('.mui-icon-bars').addEventListener("tap",function(){
+				if(_this.isShow)
+					_this.hide();
+				else
+					_this.show();
+			},false);
+			this.pop.addEventListener("tap",function(){
+				_this.hide();
+			},false);
+		}
+		var lb=new leftBar();
+			lb.bindEvent();
+		/*
+		 * MUI页面
+		 */
+		var page_mui=function(){
+			this.ele=document.querySelector(".div_mui");
+		};
+		page_mui.prototype.bindEvent=function(){
+
+		};
+		
+		var page_mui=new page_mui();
+			page_mui.bindEvent();
+		/*
+		 * HTML5页面
+		 */
+		var page_html5=function(){
+			this.ele=document.querySelector(".div_html5");
+		};
+		page_html5.prototype.bindEvent=function(){
+			var con=document.getElementById("container");
+			var main=document.getElementById("main");
+			var mainRotate={X:0,Y:-30,Z:0};
+			var timer=null;
+			con.addEventListener("touchstart",function(e){
+						var html=e.target.innerHTML;
+						if(e.target.nodeName.toUpperCase()=="A" && /^rotate/.test(html) ){
+							step(html.substr(html.length-1,1));
+	                        e.stopPropagation();
+	                    	e.preventDefault();
+						}
+						else if( e.target.nodeName.toUpperCase()=="A" && html=="reload")
+						{
+							mainRotate={X:0,Y:0,Z:0};
+							main.style["-webkit-transform"]="rotateX(0deg) rotateY(0deg) rotateZ(0deg)";
+							document.getElementById("black").style["-webkit-transform"]="rotateX(90deg)";
+							document.getElementById("red").style["-webkit-transform"]="rotateX(30deg)";
+							document.getElementById("yellow").style["-webkit-transform"]="  rotateX(-30deg) rotateY(-90deg)";
+	                        e.stopPropagation();
+	                    	e.preventDefault();
+						}
+						else if(e.target.nodeName.toUpperCase()=="A" && /btn/.test(html))
+						{
+							e.stopPropagation();
+	                    	e.preventDefault();
+							setEleRoute(html.substr(3));
+						}				
+	
+						
+				});
+			document.getElementById("demo").addEventListener("touchstart",function(){location.href="http://1.devtest2.sinaapp.com/3dbox.html";});
+			con.addEventListener("touchend",function(e){
+						window.clearTimeout(timer);
+			},false);
+			
+			var n=0;
+			function setEleRoute(id)
+			{
+				var inputs=document.getElementById("sec_"+id).getElementsByTagName("input");
+				var x=inputs[0].value==undefined?mainRotate.X:inputs[0].value;
+				var y=inputs[1].value==undefined?mainRotate.Y:inputs[1].value;
+				var z=inputs[2].value==undefined?mainRotate.Z:inputs[2].value;
+				var rotate=" rotateX("+x+"deg) rotateY("+y+"deg) rotateZ("+z+"deg)";
+				document.getElementById(id).style["-webkit-transform"]=rotate;
+			}
+			function step(dri)
+			{
+				mainRotate[dri]=(mainRotate[dri])+1;
+				main.style["-webkit-transform"]="rotateX("+mainRotate.X+"deg) rotateY("+mainRotate.Y+"deg) rotateZ("+mainRotate.Z+"deg)";
+				timer=window.setTimeout((function(d){ return function (){step(d);}})(dri),50);
+			}
+		}
+		var page_html5=new page_html5();
+			page_html5.bindEvent();
+		
+		// svg
+		(function(){
+			var myScroll
+		
+			var pathTotal,pathSingle;
+			//var x=document.getElementsByTagName("path")[1];
+			var winWidth=window.innerWidth;
+			var svg=document.getElementById("svg");
+			
+			var svg3=document.getElementById("svg_3");
+			svg.setAttribute("width",winWidth);
+			
+			svg.style.width=winWidth;
+			
+			win=window.innerHeight/2
+			function initd(xc,yc,times){
+				pathSingle=Math.sqrt(yc*yc+xc*xc)
+				pathTotal=pathSingle*times;
+				
+				svg.setAttribute("height",yc*(times+1)+win+100);
+				svg3.style["stroke-dasharray"]=pathTotal;
+				svg3.style["stroke-dashoffset"]=pathTotal;
+				var d="m0,"+win;
+				n=0;
+				for(var i=1;i<times+1;i++)
+				{
+					nxc=i%2==0?-1*xc:xc;
+					d+=" l"+nxc+","+yc;
+				}
+				return d;
+			}
+						
+			function updatePosition () {
+				if(this.y<0&&this.y>-1500){
+					console.log(pathTotal+"-"+(pathSingle/300)+"*"+this.y);
+					var dashoffset=pathTotal+this.y*(pathSingle/300);
+					svg3.style["stroke-dashoffset"]=dashoffset;
+					console.log(svg3.getBoundingClientRect())
+				}
+				else if(this.y>=0)
+				{
+					svg3.style["stroke-dashoffset"]=pathTotal;
+				}
+				else{
+					svg3.style["stroke-dashoffset"]=0;
+				}
+			}
+			
+			function loaded () {
+				fixViewport();
+				svg3.setAttribute("d",initd(320,300,5));
+				console.log(Math.sqrt(320*320+300*300));
+				position = document.getElementById('position');
+	
+				myScroll = new IScroll('#wrapper', { probeType: 3, mouseWheel: true });
+	
+				myScroll.on('scroll', updatePosition);
+				myScroll.on('scrollEnd', updatePosition);
+			}
+	
+			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+					
+			// 强制浏览器以指定宽度渲染
+			function fixViewport() {
+			  // alert(navigator.userAgent);
+			  // alert(isiPhone());
+			  // return;
+			  var metas = document.getElementsByTagName('meta');
+			  if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i))) {
+				for (i=0; i<metas.length; i++) {
+				  if (metas[i].name == "viewport") {metas[i].content = "width=320, user-scalable=no";}
+				}
+			  }
+			  if (navigator.userAgent.match(/android/i)) {
+				for (i=0; i<metas.length; i++) {
+				  if (metas[i].name == "viewport") {metas[i].content = "width=320, user-scalable=no";}  //for galaxy s4 & google nexus
+				}
+			  }
+			}
+			document.body.onload=loaded;
+		})()
+		
+		/*
+		 * 切换页面事件
+		 */
+		var pageEvent={
+			pageIndex:0,
+			activeEle:[page_mui.ele,page_html5.ele],
+			show:function(new_index){
+				if(this.pageIndex==new_index)
+					return;
+				var ele=this.activeEle[new_index];
+				document.body.scrollTop=0;
+				ele.style["z-index"]=3;
+				ele.style["-webkit-transition"]="0s";
+				if(new_index-this.pageIndex>0){
+					ele.style["webkitTransform"]="translate3d(100%,0px,0px)";
+				}
+				else{
+					ele.style["webkitTransform"]="translate3d(-100%,0px,0px)";
+				}
+				ele.style["display"]="block";
+				(function(ele){
+					window.setTimeout(function(){
+						ele.style["-webkit-transition"]=" 0.3s";
+						ele.style["transition"]=" 0.3s";
+						ele.style["webkitTransform"]="translate3d(0px,0px,0px)";	
+					},10);	
+				})(ele);
+				
+				
+				//ele.style["left"]="0%";
+				(function(ele,oldEle,new_index,pe){
+					window.setTimeout(function(){
+						oldEle.style["display"]="none";
+						pe.pageIndex=new_index;
+						ele.style["z-index"]=2;
+					},300);
+				})(ele,this.activeEle[this.pageIndex],new_index,this);
+				
+			}
+		};
+		
+		
+		// 底部导航按钮事件
+		var bottom_nav=function(){
+			this.ele=document.querySelector(".nav_bottom");
+		};
+			bottom_nav.prototype.bindEvent=function(){
+				var _this=this;
+				this.ele.addEventListener("tap",function(e){
+					var i=this.querySelector(".mui-active").attributes["index"];
+					var nav_a=_this.getParent(e.target,"a");
+						pageEvent.show(nav_a.attributes["index"].value);
+					console.log(nav_a);
+				},false);
+			}
+			bottom_nav.prototype.getParent=function(ele,nodeName){
+				if(ele.nodeName.toUpperCase()==nodeName.toUpperCase()){
+					return ele;
+				}else{
+					return arguments.callee(ele.parentNode,nodeName);
+				}
+			};
+			bottom_nav=new bottom_nav();
+			bottom_nav.bindEvent();
+			
+	})()
+	
+</script>
+</html>
